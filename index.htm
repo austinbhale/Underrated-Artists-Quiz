@@ -1,0 +1,134 @@
+<script src="main.js"></script>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Underrated Artists Quiz</title>
+    <meta name="viewport" content="width=device-width, initial-
+    scale=1">
+    <style>
+        .container {
+            position: relative;
+            text-align: center;
+            color: black;
+        }
+
+        .container p {
+            display : inline
+        }
+
+        .bottom-left {
+            position: absolute;
+            bottom: 8px;
+            left: 16px;
+        }
+
+        .top-left {
+            position: absolute;
+            top: 8px;
+            left: 16px;
+        }
+
+        .top-right {
+            position: absolute;
+            top: 8px;
+            right: 16px;
+        }
+
+        .bottom-right {
+            position: absolute;
+            bottom: 8px;
+            right: 16px;
+        }
+
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="frame">
+        <h1>Underrated Artists Quiz</h1>
+        <h2 id="question">Find the underrated artist that</h2>
+    </div>
+    <p>This is a test</p>
+
+    <div class="container">
+        <img src="background.jpg" alt="Bg" style="width:100%;max-height:600px;">
+        <a href='#' class="previousbtn">&#8249;</a>
+        <a href='#' class="nextbtn">&#8250;</a>
+        <div class="bottom-left">Bottom Left</div>
+        <div class="top-left">Top Left</div>
+        <div class="top-right">Top Right</div>
+        <div class="bottom-right">Bottom Right</div>
+        <div class="centered">Centered</div>
+    </div>
+
+    <form name="q1Form" id="q1Form">
+        <input id="ansA" type="radio" name="questions" value='a'> <span id="answerA"></span><p></p>
+        <input id="ansB" type="radio" name="questions" value='b'> <span id="answerB"></span><p></p>
+        <input id="ansC" type="radio" name="questions" value='c'> <span id="answerC"></span><p></p>
+        <input id="ansD" type="radio" name="questions" value='d'> <span id="answerD"></span><p></p>
+    </form>    
+    
+    <script>
+    window.onload = refresh();
+    </script>
+    
+    <button type="button" onclick="submitAnswer()">Submit Answer</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Amir Obe -->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/0Gnpc27WFVA" frameborder="0" allow="autoplay; encrypted-media"
+        allowfullscreen></iframe>
+    <!-- SiR -->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/qZwEZOuSEI8" frameborder="0" allow="autoplay; encrypted-media"
+        allowfullscreen></iframe>
+    <!-- Derek Pope-->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/CVBrt2Fwt9w" frameborder="0" allow="autoplay; encrypted-media"
+        allowfullscreen></iframe>
+    <!-- 88GLAM-->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/GcVEUMT4y8o" frameborder="0" allow="autoplay; encrypted-media"
+        allowfullscreen></iframe>
+    <!-- Cunninlynguists-->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/GK9EmWZNPpo" frameborder="0" allow="autoplay; encrypted-media"
+        allowfullscreen></iframe>
+    <!-- Joyner Lucas-->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/jO_v2sXm-f4" frameborder="0" allow="autoplay; encrypted-media"
+        allowfullscreen></iframe>
+    <!-- Royce da 5'9"-->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/DiqslnGOq2A" frameborder="0" allow="autoplay; encrypted-media"
+        allowfullscreen></iframe>
+    <!-- Flatbush Zombies-->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/rD9MD_4K_Do" frameborder="0" allow="autoplay; encrypted-media"
+        allowfullscreen></iframe>
+    <!-- Kirk Knight-->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/mn5_ijaZfp0" frameborder="0" allow="autoplay; encrypted-media"
+        allowfullscreen></iframe>
+    <!-- Nyck Caution-->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/RP-wQQKqlcQ" frameborder="0" allow="autoplay; encrypted-media"
+        allowfullscreen></iframe>
+    <!-- Jalen Santoy-->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/A8JnV3tULAE" frameborder="0" allow="autoplay; encrypted-media"
+        allowfullscreen></iframe>
+
+</body>
+
+</html>
