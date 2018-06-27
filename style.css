@@ -1,0 +1,44 @@
+body {
+    background-color: lightblue;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    color: black;
+}
+
+.container p {
+    display : inline
+}
+
+.bar-title {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 22px;
+    color: #566336;
+    
+}
+
+.bar {
+    background-color: white;
+    width: 100%;
+    height: 30px;
+    margin-bottom: 40px;
+}
+
+.bar-inner {
+    background-color: blue;
+    width: 90%;
+    height: 100%;
+    position: relative;
+}
+
+.bar-inner:after {
+    position: absolute;
+    right: 2.5%;
+    content: attr(data-percent);
+    line-height: 30px;
+    color: greenyellow;
+    font-weight: 700;
+}

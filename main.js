@@ -3,9 +3,10 @@ Author: Austin Hale
 */
 
 var answers = document.getElementsByName("questions");
-// what
 
 function refresh() {
+    document.getElementById('questions').innerHTML = questions_arr[question_number-1];
+
     document.getElementById('answerA').innerHTML = getAnswerChoices();
     document.getElementById('answerB').innerHTML = getAnswerChoices();
     document.getElementById('answerC').innerHTML = getAnswerChoices();
@@ -18,7 +19,14 @@ function refresh() {
     document.getElementById('ansD').checked = false;
 }
 
-var answer_q_and_a = [
+var questions_arr = 
+["Which age range best describes you?", "What is your preferred method of listening to music?",
+"What is your favorite flow style?", "What's your favorite movie genre?", "What do you like to do on the weekends?",
+"How do you feel about the presence of social issues in music?", "What's your take on autotune?",
+"Who's one of your favorite mainstream artists?", "Pick a region that best describes your taste:", 
+"Which do you prefer: hooks or choruses?"];
+
+var answers_arr = [
     ["0-17", "Earbuds", "Fast", "Action", "Go out and party", "I'm with it", "T-Pain is my idol", "J. Cole", "East Coast", "Hooks make the song"],
     ["18-24", "Over-the-ear headphones", "Medium paced", "Horror", "Chill with some friends", "Keep it out of music", "I think it's great", "Drake", "West Coast", "Little to no hooks. I like it old school."],
     ["25-39", "Small speakers", "Smooth and slow", "Comedy", "Stay home alone", "As long as it isn't overbearing, it's good", "Not a huge fan", "Kendrick Lamar", "Southern Rap", "Both"],
@@ -36,14 +44,14 @@ function getAnswerChoices() {
         switch (answers[idx].value) {
             case 'a':
                 first_question = true;
-                return answer_q_and_a[idx][question_number - 1];
+                return answers_arr[idx][question_number - 1];
             case 'b':
-                return answer_q_and_a[idx][question_number - 1];
+                return answers_arr[idx][question_number - 1];
             case 'c':
-                return answer_q_and_a[idx][question_number - 1];
+                return answers_arr[idx][question_number - 1];
             case 'd':
                 first_question = false;
-                return answer_q_and_a[idx][question_number - 1];
+                return answers_arr[idx][question_number - 1];
             default:
                 return;
         }
@@ -76,7 +84,7 @@ function submitAnswer() {
     }
 
     if (!checked) {
-        alert("answer 1 not checked");
+        // alert("answer not checked");
         return;
     }
 
@@ -109,6 +117,10 @@ function submitAnswer() {
 }
 
 function getResults() {
+    
+    removeElements();
+    document.getElementById('reset').style.display='block';
+
     var artist_picks = {"Amir Obe": amir_obe, "SiR": sir, "Jalen Santoy": jalen_santoy, 
     "Derek Pope": derek_pope, "88GLAM": the88glam, "Cunninlynguists": cunninlynguists, 
     "Joyner Lucas": joyner_lucas, "Royce da 5'9\"": royce_da_59, "Flatbush Zombies": flatbush_zombies, 
@@ -117,17 +129,31 @@ function getResults() {
     var artist_perc = [amir_obe,sir,jalen_santoy,derek_pope,the88glam,
     cunninlynguists,joyner_lucas,flatbush_zombies,kirk_knight,nyck_caution];
 
-
     var keysSorted = Object.keys(artist_picks).sort(function(a,b){return artist_picks[b]-artist_picks[a]});
     
     artist_perc.sort(function(a,b){return b-a});
 
     alert(keysSorted[0] + ": " + artist_perc[0] + ", " + keysSorted[1] + " " + artist_perc[1]);
 
-    
+    displayCustomResults();
 }
 
+function displayCustomResults() {}
 
+function removeElements() {
+    document.getElementById('button').style.display = "none";
+    document.getElementById('answerA').style.display = "none";
+    document.getElementById('answerB').style.display = "none";
+    document.getElementById('answerC').style.display = "none";
+    document.getElementById('answerD').style.display = "none";
+
+    document.getElementById('ansA').style.display = "none";
+    document.getElementById('ansB').style.display = "none";
+    document.getElementById('ansC').style.display = "none";
+    document.getElementById('ansD').style.display = "none";
+
+    document.getElementById('questions').style.display = "none";
+}
 
 function incrAArtists() {
     switch (question_number) {

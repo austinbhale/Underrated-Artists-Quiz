@@ -7,88 +7,50 @@
     <title>Underrated Artists Quiz</title>
     <meta name="viewport" content="width=device-width, initial-
     scale=1">
-    <style>
-        body {
-            background-color: lightblue;
-        }
-
-        .container {
-            position: relative;
-            text-align: center;
-            color: black;
-        }
-
-        .container p {
-            display : inline
-        }
-
-        .bottom-left {
-            position: absolute;
-            bottom: 8px;
-            left: 16px;
-        }
-
-        .top-left {
-            position: absolute;
-            top: 8px;
-            left: 16px;
-        }
-
-        .top-right {
-            position: absolute;
-            top: 8px;
-            right: 16px;
-        }
-
-        .bottom-right {
-            position: absolute;
-            bottom: 8px;
-            right: 16px;
-        }
-
-        .centered {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-    </style>
-
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
     <div id="frame">
         <h1>Underrated Artists Quiz</h1>
-        <h2 id="question">Find the underrated artist that</h2>
     </div>
-    <p>This is a test</p>
-
+    <div id="questions"></div>
+    <br>
     <form name="q1Form" id="q1Form">
-        <input id="ansA" type="radio" name="questions" value='a'> <span id="answerA"></span><p></p>
-        <input id="ansB" type="radio" name="questions" value='b'> <span id="answerB"></span><p></p>
-        <input id="ansC" type="radio" name="questions" value='c'> <span id="answerC"></span><p></p>
-        <input id="ansD" type="radio" name="questions" value='d'> <span id="answerD"></span><p></p>
-    </form>            
-    
-    
-    
+        <input id="ansA" type="radio" name="questions" value='a'>
+        <span id="answerA"></span>
+        <p></p>
+        <input id="ansB" type="radio" name="questions" value='b'>
+        <span id="answerB"></span>
+        <p></p>
+        <input id="ansC" type="radio" name="questions" value='c'>
+        <span id="answerC"></span>
+        <p></p>
+        <input id="ansD" type="radio" name="questions" value='d'>
+        <span id="answerD"></span>
+        <p></p>
+    </form>
+
+
+
     <script>
-    window.onload = refresh();
+        window.onload = refresh();
     </script>
-    
+
     <button id="button" type="button" onclick="submitAnswer()">Next Question</button>
+    <input id="reset" type="button" value="Take Again!" style="display: none" onclick="document.location.reload(true)"></input>
+
+    <div class="results">
+        <h2 class="bar-title">
+            Artist1
+        </h2>
+        <div class="bar">
+            <div class="bar-inner" data-percent="90%"></div>
+        </div>
+
+    </div>
+
     <!-- <a id="button" href='#' class="nextbtn" onclick="submitAnswer()">&#8250;</a> -->
-
-
-
-
-
-
-
-
-
-
-
 
     <!-- Amir Obe -->
     <iframe width="560" height="315" src="https://www.youtube.com/embed/0Gnpc27WFVA" frameborder="0" allow="autoplay; encrypted-media"
