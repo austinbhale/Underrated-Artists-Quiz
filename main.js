@@ -72,6 +72,8 @@ var kirk_knight = 0;
 var nyck_caution = 0;
 
 function submitAnswer() {
+    var styleElem = document.head.appendChild(document.createElement("style"));
+    styleElem.innerHTML = ".line::after {content: '';} .line1::after {max-width: 50%;}";
     var i = 0, options = answers.length;
     var checked = false;
     var user_choice;
