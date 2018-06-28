@@ -16,12 +16,14 @@ body {
 }
 
 .wrapper {
-    width: 800px;
+    position: absolute;
+    left: 0px;
+    width: 350px;
     margin: 0 auto;
 }
 
 .wrapper h1 {
-    text-align: center;
+    text-align: left;
     text-transform: uppercase;
     margin-top: 40px;
 }
@@ -32,13 +34,14 @@ body {
 
 .line {
     height: 25px;
-    min-width: 800px;
+    min-width: 350px;
     margin: 0 auto 10px;
     line-height: 25px;
     font-size: 14px;
     color: #fff;
     padding: 0 0 0 10px;
     position: relative;
+    left: 0px;
 }
 
 .line::before{
