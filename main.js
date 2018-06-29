@@ -2,21 +2,17 @@
 Author: Austin Hale
 */
 
-var answers = document.getElementsByName("questions");
+var answers = document.getElementsByName("choices");
 
 function refresh() {
+    var styleElem = document.head.appendChild(document.createElement("style"));
     document.getElementById('questions').innerHTML = questions_arr[question_number-1];
-
-    document.getElementById('answerA').innerHTML = getAnswerChoices();
-    document.getElementById('answerB').innerHTML = getAnswerChoices();
-    document.getElementById('answerC').innerHTML = getAnswerChoices();
-    document.getElementById('answerD').innerHTML = getAnswerChoices();
-
-    // Uncheck the radio buttons for each question
-    document.getElementById('ansA').checked = false;
-    document.getElementById('ansB').checked = false;
-    document.getElementById('ansC').checked = false;
-    document.getElementById('ansD').checked = false;
+    
+    for (var i=1; i<=4;i++) {
+        document.getElementById('answer'+i).innerHTML = getAnswerChoices();
+        document.getElementById('ans'+i).checked = false;
+    }
+    styleElem.innerHTML = "h3 {text-align: center;}";
 }
 
 var questions_arr = 
@@ -72,8 +68,6 @@ var kirk_knight = 0;
 var nyck_caution = 0;
 
 function submitAnswer() {
-    var styleElem = document.head.appendChild(document.createElement("style"));
-    styleElem.innerHTML = ".line::after {content: '';} .line1::after {max-width: 50%;}";
     var i = 0, options = answers.length;
     var checked = false;
     var user_choice;
@@ -122,6 +116,10 @@ function getResults() {
     
     removeElements();
     document.getElementById('reset').style.display='block';
+    document.getElementById('wrapper').style.display='block';
+
+    var styleElem = document.head.appendChild(document.createElement("style"));
+    styleElem.innerHTML = "#reset {margin: 0 auto;}";
 
     var artist_picks = {"Amir Obe": amir_obe, "SiR": sir, "Jalen Santoy": jalen_santoy, 
     "Derek Pope": derek_pope, "88GLAM": the88glam, "Cunninlynguists": cunninlynguists, 
@@ -135,26 +133,35 @@ function getResults() {
     
     artist_perc.sort(function(a,b){return b-a});
 
-    alert(keysSorted[0] + ": " + artist_perc[0] + ", " + keysSorted[1] + " " + artist_perc[1]);
-
-    displayCustomResults();
+    displayCustomResults(keysSorted, artist_perc);
 }
 
-function displayCustomResults() {}
+function displayCustomResults(sortedArtists, sortedPercentage) {
+    for(var i=0; i<4; i++) {
+
+        var styleElem = document.head.appendChild(document.createElement("style"));
+        styleElem.innerHTML = ".line::after {content: '';} .line" + (i+1) +
+        "::after {max-width: " + sortedPercentage[i] + "0%;}";
+        
+        document.getElementById('perc' + (i+1)).style.display = 'block';
+        document.getElementById('perc' + (i+1)).innerHTML = sortedPercentage[i] + "0%";
+
+        document.getElementById('result'+(i+1)).innerHTML = sortedArtists[i];
+    }
+        
+        document.getElementById(''+sortedArtists[0]+'').style.display = 'block';
+}
 
 function removeElements() {
     document.getElementById('button').style.display = "none";
-    document.getElementById('answerA').style.display = "none";
-    document.getElementById('answerB').style.display = "none";
-    document.getElementById('answerC').style.display = "none";
-    document.getElementById('answerD').style.display = "none";
 
-    document.getElementById('ansA').style.display = "none";
-    document.getElementById('ansB').style.display = "none";
-    document.getElementById('ansC').style.display = "none";
-    document.getElementById('ansD').style.display = "none";
+    for (var i=1; i<=4;i++) {
+        document.getElementById('answer'+i).style.display = "none";
+        document.getElementById('ans'+i).style.display = "none";
+    }
 
     document.getElementById('questions').style.display = "none";
+    document.getElementById('form').style.display = "none";
 }
 
 function incrAArtists() {
