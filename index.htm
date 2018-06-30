@@ -2,9 +2,11 @@
 <!DOCTYPE html>
 <html>
 
+
+
 <head>
     <meta charset="UTF-8">
-    <title>Underrated Artists Quiz</title>
+    <title style="white-space: nowrap">Underrated Artists Quiz</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -18,29 +20,29 @@
 <div class="vertical-radio-buttons">
     <!-- <fieldset> -->
     <form id="form">
-        <h3 id="questions"></h3>
+        <h3 id="questions" style="white-space: nowrap"></h3>
     <br>
         <div>
             <span>
-                <input id="ans1" type="radio" name="choices" value='a' style="vertical-align: middle; margin:0px;">
+                <input id="ans1" type="radio" name="choices" value='a' style="vertical-align: middle; margin:0px; white-space: nowrap;">
                 <label id="answer1"></label><br/><br/>
             </span>
         </div>
         <div>
             <span>
-                <input id="ans2" type="radio" name="choices" value='b' style="vertical-align: middle; margin:0px;">
+                <input id="ans2" type="radio" name="choices" value='b' style="vertical-align: middle; margin:0px; white-space: nowrap;">
                 <label id="answer2"></label><br/><br/>
             </span>
         </div>
         <div>
             <span>
-                <input id="ans3" type="radio" name="choices" value='c' style="vertical-align: middle; margin:0px;">
+                <input id="ans3" type="radio" name="choices" value='c' style="vertical-align: middle; margin:0px; white-space: nowrap;">
                 <label id="answer3"></label><br/><br/>
             </span>
         </div>
         <div>
             <span>
-                <input id="ans4" type="radio" name="choices" value='d' style="vertical-align: middle; margin:0px;">
+                <input id="ans4" type="radio" name="choices" value='d' style="vertical-align: middle; margin:0px; white-space: nowrap;">
                 <label id="answer4"></label><br/><br/>
             </span>
         </div>
@@ -53,7 +55,7 @@
     </script>
 
     <div style="text-align: center;">
-        <button id="button" type="button" onclick="submitAnswer()">Next Question →</button>
+        <button id="button" type="button" onclick="submitAnswer()" class="next">Next Question →</button>
     </div>
     <button id="reset" type="button" style="display: none;" onclick="document.location.reload(true)">Take Again!</button>
     <br><br>
