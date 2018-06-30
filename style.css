@@ -25,6 +25,7 @@
     h1 {
         font-size: 120%;
     }
+
 /*
     .line {
         width: 70%;
@@ -73,6 +74,10 @@ h1 {
     text-align: center; 
     text-transform: uppercase;
     margin-top: 20px;
+}
+
+h3 {
+    font-size: 80%;
 }
 
 .wrapper h2 {
