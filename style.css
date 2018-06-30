@@ -13,7 +13,7 @@
     width: device-width;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 629px) {
     .wrapper {
         width: 120px;
     }
@@ -95,16 +95,29 @@ h1 {
     z-index: -1;
 }
 
+.vertical-radio-buttons {
+    width: 47%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .vertical-radio-buttons div {
     display: block;
     padding: 0 0 7px 7;
-    clear: both;
+    clear: both;   
 }
   
 .vertical-radio-buttons span {
     display: block;
-    padding-left: 486px;
+    padding: center;
     cursor: inherit;
+}
+
+@media only screen and (max-width: 500px) {
+    /* .vertical-radio-buttons div {
+        /* height: 0; */
+        /* padding-top: 4%;
+    } */
 }
 
 #button {
